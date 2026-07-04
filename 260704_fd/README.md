@@ -1,8 +1,8 @@
  # Linux FD Redirection 정리
 
 이 문서는 Linux에서 `stdout`, `stderr`, `dup2()`, shell redirection, `/dev/null`, `dprintf()`, `snprintf() + write()` 방식의 차이를 정리한 문서이다.
-<img width="751" height="170" alt="image" src="https://github.com/user-attachments/assets/fb33444a-04c0-43f2-be11-d350be03c40f" />
-<img width="454" height="176" alt="image" src="https://github.com/user-attachments/assets/3fd2afae-eaaa-4889-b419-3295f51a93fe" />
+<img width="721" height="136" alt="image" src="https://github.com/user-attachments/assets/491a5eca-025a-4760-9d57-e3770a5c8b16" />
+<img width="505" height="181" alt="image" src="https://github.com/user-attachments/assets/4acc93b0-228c-4b4f-bcc2-82ec7d001c58" />
 
 ---
 
