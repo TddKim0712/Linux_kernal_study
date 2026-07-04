@@ -1,0 +1,4 @@
+this will be logged in output.txt file,
+
+ right now fd 1 and 2 is logging at output.txt
+stdout visible?
