@@ -1,4 +1,4 @@
-# 260708_chardev_helloworld
+# 커널 모듈 입문: helloworld 출력하기
 
 리눅스 커널 모듈 Hello World 실습.
 
@@ -43,6 +43,8 @@ sudo insmod hello.ko
 `insmod`는 insert module의 의미이며, 모듈을 현재 실행 중인 커널에 삽입한다.
 
 이때 `init_module()`이 실행된다.
+<img width="935" height="445" alt="image" src="https://github.com/user-attachments/assets/ace03bcf-8d8c-4e38-a750-49c51ee38716" />
+
 
 ---
 
@@ -79,6 +81,9 @@ sudo rmmod hello
 주의할 점은 `hello.ko`가 아니라 모듈 이름인 `hello`를 사용한다.
 
 모듈 제거 시 `cleanup_module()`이 실행된다.
+
+<img width="904" height="304" alt="image" src="https://github.com/user-attachments/assets/fbe76411-02fb-4aeb-91dd-4fe87ea4b9e3" />
+
 
 ---
 
@@ -166,8 +171,6 @@ module verification failed: signature and/or required key missing
 ```
 
 공식 서명된 모듈이 아니라는 의미이다.
-
-실습용 모듈에서는 일반적으로 볼 수 있다.
 
 ```text
 hello world
