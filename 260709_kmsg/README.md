@@ -1,5 +1,22 @@
 # printk, dmesg, /dev/kmsg 실험
 
+
+/dev/kmsg는 커널 로그를 저장하는 파일 자체가 아니라,
+커널 내부 printk 로그 버퍼에 read/write로 접근하게 해주는 character device 
+
+
+실제 저장 공간 = 커널 메모리 안의 <b> printk ring buffer </b>
+
+```
+/dev/null
+write() -> 그냥 버림
+read()  -> EOF
+
+/dev/kmsg
+write() -> 커널 로그 버퍼에 기록
+read()  -> 커널 로그 버퍼에서 로그 읽기
+```
+
 ## 출발점
 
 커널 모듈에서 다음 코드를 실행했다.
