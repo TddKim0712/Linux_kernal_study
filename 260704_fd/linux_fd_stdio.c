@@ -36,8 +36,9 @@ perror("fd_null printed on stderr\n");
 
 
 dup2(fd_output, 1);
-perror("this will be logged in output.txt file, not printed on terminal\n");
 dup2(fd_output, 2);
+perror("this will be logged in output.txt file, not printed on terminal\n");
+
 write(fd_output, "this will be logged in output.txt file,\n\n right now fd 1 and 2 is logging at output.txt\n", sizeof( "this will be logged in output.txt file,\n\n right now fd 1 and 2 is logging at output.txt\n")-1);
 close(fd_null);
 close(fd_output);
