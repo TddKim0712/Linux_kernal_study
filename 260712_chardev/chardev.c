@@ -20,8 +20,16 @@ static int chardev_open(struct inode *inode, struct file *file)
     return 0;
 }
 
+static ssize_t chardev_read(struct file *file, char __user *buf, size_t count, loff_t *offset)
+{
+    printk("chardev_read\n");
+    return 0;
+
+}
+
 struct file_operations chardev_fops = {
     .open = chardev_open,
+    .read = chardev_read,
 };
 
 static int chardev_init(void)
@@ -36,15 +44,16 @@ static int chardev_init(void)
 
     if (ret_val < 0) {
         printk(KERN_ALERT "%s failed with %d\n",
-               "Sorry, registering the character device ",
+               "registering char dev\n ",
                ret_val);
         return ret_val;
     }
 
-    printk(KERN_INFO "%s The major device number is %d.\n",
-           "Registration is a success", MAJOR_NUM);
+    printk(KERN_INFO "%s major dev num: %d\n",
+           "Registration good\n", MAJOR_NUM);
 
     printk(KERN_INFO "Use:\n");
+    // ret_val: register_chrdev -> MAJOR_NUM
     printk(KERN_INFO "mknod /dev/%s c %d 0\n",
            DEVICE_FILE_NAME, MAJOR_NUM);
 
